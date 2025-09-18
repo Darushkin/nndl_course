@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titanic Survival EDA</title>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        section { margin-bottom: 30px; }
+        input, button { margin: 5px 0; }
+        canvas { max-width: 600px; margin-top: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        @media (max-width: 700px) { canvas { max-width: 100%; } }
+    </style>
+</head>
+<body>
+    <h1>Titanic Survival Data Exploration</h1>
+
+    <section id="data-load">
+        <h2>1. Load Data</h2>
+        <input type="file" id="trainFile" accept=".csv">
+        <button id="loadBtn">Load Data</button>
+    </section>
+
+    <section id="overview">
+        <h2>2. Overview</h2>
+        <div id="tablePreview"></div>
+        <p id="shape"></p>
+    </section>
+
+    <section id="missing">
+        <h2>3. Missing Values</h2>
+        <canvas id="missingChart"></canvas>
+    </section>
+
+    <section id="stats">
+        <h2>4. Stats Summary</h2>
+        <div id="statsSummary"></div>
+    </section>
+
+    <section id="feature-importance">
+        <h2>5. Feature Importance / Factor Analysis</h2>
+        <div id="featureCharts"></div>
+    </section>
+
+    <section id="export">
+        <h2>6. Export Data & Summary</h2>
+        <button id="exportCSV">Download CSV</button>
+        <button id="exportJSON">Download JSON Summary</button>
+    </section>
+
+    <p>Deployment: Create public GitHub repo, commit index.html/app.js, enable Pages (main/root), test URL.</p>
+
+    <script src="app.js"></script>
+</body>
+</html>
